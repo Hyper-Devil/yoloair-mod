@@ -294,7 +294,7 @@ class Model(nn.Module):
         self.info()
         return self
 
-    def info(self, verbose=False, img_size=640):  # print model information
+    def info(self, verbose=False, img_size=416):  # print model information
         model_info(self, verbose, img_size)
 
     def _apply(self, fn):
