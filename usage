@@ -1,0 +1,11 @@
+docker run -it -p 2656:22 --gpus='"device=0,1"' --shm-size 64g --ipc=host --name yoloair_whd -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY=$DISPLAY -v /home/sy/whd/yoloair:/yoloair -v /home/sy/whd/cone_coco:/cone_coco -v /home/sy/whd/cone_coco2voc:/cone_coco2voc -v /home/sy/whd:/whd -v /home/sy:/sy  cnstark/pytorch:1.8.1-py3.9.12-cuda11.1-devel-ubuntu20.04 /bin/bash
+apt update
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv A4B469963BF863CC
+apt-get install cmake git protobuf-compiler libprotoc-dev libgl1-mesa-glx libglib2.0-dev
+pip install wandb
+
+python -m torch.distributed.launch --nproc_per_node 2 train.py --data cone.yaml --cfg configs/yolov5-standard/yolov5n.yaml --cache --weights yolov5n.pt  --img 416 --device 0,1 --batch-size 128
+
+python -m torch.distributed.launch --nproc_per_node 2 train.py --data cone.yaml --cfg configs/yolox/yolox-bit.yaml --cache --weights ''  --img 416 --device 0,1 --batch-size 128 --noautoanchor --otaloss yolox
+
+python val.py --weights runs/train/exp3/weights/best.pt --data cone.yaml --img 416 --save-json

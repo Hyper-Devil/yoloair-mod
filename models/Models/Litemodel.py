@@ -487,14 +487,17 @@ class DWConvblock(nn.Module):
         self.bn1 = nn.BatchNorm2d(in_channels)
         self.conv2 = nn.Conv2d(in_channels, out_channels, kernel_size=1, stride=1, padding=0, bias=False)
         self.bn2 = nn.BatchNorm2d(out_channels)
+        self.act = nn.SiLU() 
 
     def forward(self, x):
         x = self.conv1(x)
         x = self.bn1(x)
-        x = F.relu(x)
+        # x = F.relu(x)
+        x = self.act(x)
         x = self.conv2(x)
         x = self.bn2(x)
-        x = F.relu(x)
+        # x = F.relu(x)
+        x = self.act(x)
         return x
 
 # DWConvblock end
