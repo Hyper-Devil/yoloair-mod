@@ -1,9 +1,8 @@
 *.pyc
 *.DS_Store
-yolov5s.pt
-yolov5s-cls.pt
-yolov5s-seg.pt
+*.pt
 log_model
 runs
 *.idea
-yolov7/coco128.yaml
+runs/*
+wandb/*
