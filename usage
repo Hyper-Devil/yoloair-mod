@@ -7,7 +7,7 @@ pip install wandb
 git init
 git remote -v
 git remote rm origin
-git remote add origin git@github.com:Hyper-Devil/yoloair-mod.git
+git remote add origin https://github.com/Hyper-Devil/yoloair-mod.git
 git config --list
 git branch cone
 git checkout cone
