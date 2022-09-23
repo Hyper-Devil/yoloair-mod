@@ -1,7 +1,11 @@
 docker run -it -p 2656:22 --gpus='"device=0,1"' --shm-size 64g --ipc=host --name yoloair_whd -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY=$DISPLAY -v /home/sy/whd/yoloair:/yoloair -v /home/sy/whd/cone_coco:/cone_coco -v /home/sy/whd/cone_coco2voc:/cone_coco2voc -v /home/sy/whd:/whd -v /home/sy:/sy  cnstark/pytorch:1.8.1-py3.9.12-cuda11.1-devel-ubuntu20.04 /bin/bash
+docker run -it -p 2656:22 --gpus='"device=0,1,2,3"' --shm-size 128g --ipc=host --name yoloair_whd_all -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY=$DISPLAY -v /home/mct/whd/yoloair-mod:/yoloair -v /home/mct/whd/Cone_COCO:/cone_coco -v /home/mct/whd/cone_coco2voc:/cone_coco2voc -v /home/mct/whd:/whd -v /home/mct:/mct -v /mnt/sdb1:/sdb1 cnstark/pytorch:1.8.1-py3.9.12-cuda11.1-devel-ubuntu20.04 /bin/bash
+
 apt update
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv A4B469963BF863CC
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv A4B469963BF863CC
 apt-get install cmake git protobuf-compiler libprotoc-dev libgl1-mesa-glx libglib2.0-dev
+python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 pip install wandb
 
 git init
