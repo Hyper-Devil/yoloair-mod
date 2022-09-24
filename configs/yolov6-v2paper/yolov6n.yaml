@@ -1,6 +1,6 @@
 # YOLOv6 🚀, GPL-3.0 license
 # Parameters
-nc: 80  # number of classes
+nc: 3  # number of classes
 depth_multiple: 0.33  # model depth multiple
 width_multiple: 0.25  # layer channel multiple
 anchors: 1  # number of anchors
@@ -18,7 +18,7 @@ backbone:
    [-1, 18, RepBlock, [256, 256] ],  
    [-1, 1, RepVGGBlockv6,[1024, 3, 2] ],
    [-1, 6, RepBlock, [512, 512] ], 
-   [-1, 1, SimSPPF, [512, 512, 5]], 
+   [-1, 1, SimSPPF, [512, 5]], 
   ]
 
 # YOLOv6 head by yoloair

@@ -194,7 +194,8 @@ class C3C2(nn.Module):
         self.conv = nn.Conv2d(c1, c_, 1, 1, autopad(1, None), groups=g, bias=False)
         self.bn = nn.BatchNorm2d(c_)
         self.act = nn.SiLU()
-        self.cv1 = Conv(2 * c_, c2, 1, act=nn.Mish())
+        # self.cv1 = Conv(2 * c_, c2, 1, act=nn.Mish())
+        self.cv1 = Conv(2 * c_, c2, 1)
         self.m = nn.Sequential(*(Bottleneck(c_, c_, shortcut, g, e=1.0) for _ in range(n)))
 
     def forward(self, x):
