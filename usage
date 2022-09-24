@@ -23,3 +23,7 @@ python -m torch.distributed.launch --nproc_per_node 2 train.py --data cone.yaml 
 python val.py --weights runs/train/exp3/weights/best.pt --data cone.yaml --img 416 --save-json
 
 python -m torch.distributed.launch --nproc_per_node 2 train.py --data cone.yaml --cfg configs/PicoDet/PicoDet-s.yaml --cache --weights ''  --img 416 --device 0,1 --batch-size 128
+
+python -m torch.distributed.launch --nproc_per_node 2 train.py --data cone.yaml --cfg configs/yolov5-transformer-Improved/tph_yolov5_n.yaml --cache --weights yolov5n.pt  --img 416 --device 0,1 --batch-size 2
+
+python -m torch.distributed.launch --nproc_per_node 2 train.py --data cone.yaml --cfg configs/yolov7/train/yolov7_tiny.yaml --cache --weights yolov7-tiny.pt  --img 416 --device 0,1 --batch-size 128
