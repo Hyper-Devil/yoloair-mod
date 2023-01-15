@@ -3,10 +3,10 @@
 <div align="center">
   <p>
     <a align="center" href="https://github.com/iscyy/yoloair" target="_blank">
-      <img width="850" src="docs/image/yoloair.png"></a>
+      <img width="850" src="https://img-blog.csdnimg.cn/11d5f1f403f74cff9c2f70a0c3b92de4.png"></a>
     <br><br>
   </p>
-  <p>YOLOAir算法库是一个基于PyTorch的YOLO系列算法组合工具箱。统一模型代码框架、统一应用、统一改进、易于模块组合、构建更强大的网络模型。</p>
+  <p>YOLOAir是一个基于PyTorch的YOLO算法库。统一模型代码框架、统一应用、统一改进、易于模块组合、构建更强大的网络模型。</p>
 
   简体中文 | [English](./README_EN.md)
 
@@ -17,7 +17,8 @@
 ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv5-red) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv7-brightgreen) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv6-blueviolet) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOX-yellow) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-PPYOLOE-007d65) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv4-green) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-TOOD-6a6da9) 
 ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv3-yellowgreen) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOR-lightgrey) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-Scaled_YOLOv4-ff96b4) ![](https://img.shields.io/badge/Support-Transformer-9cf) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-PPYOLO-lightgrey) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-PPYOLOv2-yellowgreen) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-PPYOLOEPlus-d5c59f) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-MLP-ff69b4) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-Attention-green)
 
-[特性🚀](#主要特性) • [使用🍉](#使用) • [文档📒](https://github.com/iscyy/yoloair) • [报告问题🌟](https://github.com/iscyy/yoloair/issues/new) • [更新💪](#-to-do) • [讨论✌️](https://github.com/iscyy/yoloair/discussions) • [效果预览🚀](#效果预览)
+[特性🚀](#主要特性) • [使用🍉](#使用) • [文档📒](https://github.com/iscyy/yoloair) • [报告问题🌟](https://github.com/iscyy/yoloair/issues/new) • [更新💪](#-to-do) • [讨论✌️](https://github.com/iscyy/yoloair/discussions)  
+• [YOLO改进方式教程及原理参考🚀](#yolo网络模型具体改进方式教程及原理参考)•
 
 
 ![https://github.com/iscyy/yoloair](https://img-blog.csdnimg.cn/f7045ecc4f90430cafc276540dddd702.gif#pic_center)
@@ -49,24 +50,12 @@ ______________________________________________________________________
 
 ### 🌟 Beta Supported Updates
 下列功能 YOLOAir-Beta版本内测 已支持🔥
-
-- 完成更新支持 **20+ 种 Transformer系列及其变种主干网络**🌟、**多种MLP网络🌟** 以及 **大部分重参数化结构模型网络** 🚀🚀🚀
-- 完成更新支持 **图神经网络**🌟 在YOLO中的应用
-- 完成更新支持 多模态🔥 在YOLO中的应用
-- 完成更新支持 30+ 种 **Attention注意力机制**🌟、
-- 完成更新支持 **多种Head检测头**
-- 完成更新支持 YOLOv6模型-v2.0 paper 版本
-- 完成更新支持 **YOLO系列网络模型热力图可视化**
-(GardCAM、GardCAM++等)支持YOLOv3、YOLOv3-SPP、YOLOv4、YOLOv5、YOLOR、YOLOv7、Scaled_YOLOv4、TPH-YOLO、SPD-YOLO、PP-YOLO以及自定义网络模型等模型
-- 支持Adaptive Training Sample Selection 标签分配策略和 Task Alignment Learning 标签分配策略
-- 完成更新集成 PPYOLOE 算法模型
-- 完成更新集成 TOOD 算法
-- 其他 各种
+- 其他 功能🌟
 ______________________________________________________________________
 
 ### 🌟 To Do
 
-- 更新支持多任务, 包括 目标检测、分类、分割、姿态估计、人脸检测、目标跟踪 等任务
+- 支持多任务, 包括 目标检测、分类、分割、姿态估计、人脸检测、目标跟踪 等任务
 ______________________________________________________________________
 
 ### 主要特性🚀
@@ -75,9 +64,281 @@ ______________________________________________________________________
 
 YOLOAir 算法库汇总了多种主流YOLO系列检测模型，一套代码集成多种模型: 
 
-- 内置集成 YOLOv5 模型网络结构、YOLOv7 模型网络结构、 YOLOv6 模型网络结构、PP-YOLO 模型网络结构、PP-YOLOv2 模型网络结构、PP-YOLOE 模型网络结构、PP-YOLOEPlus 模型网络结构、YOLOR 模型网络结构、YOLOX 模型网络结构、ScaledYOLOv4 模型网络结构、YOLOv4 模型网络结构、YOLOv3 模型网络结构、YOLO-FaceV2模型网络结构、TPH-YOLOv5模型网络结构、SPD-YOLO模型网络结构、SlimNeck-YOLO模型网络结构、YOLOv5-Lite模型网络结构、PicoDet模型网络结构等持续更新中...
+- 内置集成 YOLOv5 模型网络结构、YOLOv7 模型网络结构、 YOLOv6 模型网络结构、PP-YOLO 模型网络结构、PP-YOLOE 模型网络结构、PP-YOLOEPlus 模型网络结构、YOLOR 模型网络结构、YOLOX 模型网络结构、ScaledYOLOv4 模型网络结构、YOLOv4 模型网络结构、YOLOv3 模型网络结构、YOLO-FaceV2模型网络结构、TPH-YOLOv5模型网络结构、SPD-YOLO模型网络结构、SlimNeck-YOLO模型网络结构、YOLOv5-Lite模型网络结构、PicoDet模型网络结构等持续更新中...
 
-🚀支持加载YOLOv3、YOLOv4、YOLOv5、YOLOv7、YOLOR、Scaled_YOLO等网络的官方预训练权重进行迁移学习
+
+🚀支持更多的网络模型组件
+- 如表
+
+<details open>
+<div align="center">
+  <b>YOLOAir Structural Module Components</b>
+</div>
+<table align="center">
+  <tbody>
+    <tr align="center" valign="bottom">
+      <td>
+        <b>Backbones</b>
+      </td>
+      <td>
+        <b>Necks</b>
+      </td>
+      <td>
+        <b>Head</b>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+      <ul>
+        <li>CSPDarkNet系列</li>
+        <li>HorNet系列</li>
+        <li>ResNet系列</li>
+        <li>RegNet系列</li>
+        <li>ShuffleNet系列</li>
+        <li>RepLKNet系列</li>
+        <li>MobileNet系列</li>
+        <li>EfficientNet系列</li>
+        <li>ConvNext系列</li>
+        <li>Ghost系列</li>
+        <li>RepVGG系列</li>
+        <li>transformer系列</li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+        <li>PANet</li>
+        <li>RepPAN</li>
+        <li>BiFPN</li>
+        <li>CSPPAN</li>
+        <li>SlimNeck</li>
+        <li>ELANPAN</li>
+        <li>GSNeck</li>
+      </ul>
+      </td>
+      <td>
+        <ul>
+          <li>YOLOv4Head</li>
+          <li>YOLOv5Head</li>
+          <li>YOLOv6 Efficient decoupled head </li>
+          <li>YOLOv7 IDetect Head</li>
+          <li>YOLOv7 IAuxDetect Head</li>
+          <li>YOLOX DetectX Head</li>
+          <li>自适应空间特征融合 检测头ASFF Head</li>
+          <li>YOLOR 隐式学习 Head</li>
+          <li>EH-Head</li>
+          <li>Dual Weighting Head</li>
+          <li>FCOS Head</li>
+          <li>Dynamic Head</li>
+          ...
+        </ul>
+      </td>
+    </tr>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+
+<details open>
+<div align="center">
+  <b>YOLOAir Module Components</b>
+</div>
+<table align="center">
+  <tbody>
+    <tr align="center" valign="bottom">
+      <td>
+        <b>Attention注意力机制</b>
+      </td>
+      <td>
+        <b>标签分配策略</b>
+      </td>
+      <td>
+        <b>IoU损失函数</b>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+      <ul>
+        <li>Self Attention</li>
+        <li>Contextual Transformer</li>
+        <li>Bottleneck Transformer</li>
+        <li>S2-MLP Attention</li>
+        <li>AxialAttention</li>
+        <li>DANet</li>
+        <li>DoubleAttention</li>
+        <li>GlobalContextBlock</li>
+        <li>ParNetAttention</li>
+        <li>PolarizedSelfAttention</li>
+        <li>SpatialGroupEnhance copy</li>
+        <li>TripletAttention</li>
+        <li>SK Attention</li>
+        <li>CBAM Attention</li>
+        <li>SE Attention</li>
+        <li>Coordinate attention</li>
+        <li>NAM Attention</li>
+        <li>GAM Attention</li>
+        <li>ECA Attention</li>
+        <li>Shuffle Attention</li>
+        <li>CrissCrossAttention</li>
+        <li>SOCAttention</li>
+        <li>SimAM Attention</li>
+        <li>CrissCrossAttention</li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+          <li>Multi Anchor策略</li>
+          <li>YOLOv5 标签分配策略</li>
+          <li>SimOTA 标签分配策略</li>
+          <li>YOLOv7 标签分配策略</li>
+          <li>FreeAnchor 标签分配策略</li>
+          <li>AutoAssign 标签分配策略</li>
+          <li>Dual Weighting 标签分配策略</li>
+          <li>Probabilistic Anchor Assignment 锚分配策略</li>
+          <li>其他改进的标签分配策略</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>CIoU</li>
+          <li>DIoU</li>
+          <li>GIoU</li>
+          <li>EIoU</li>
+          <li>SIoU</li>
+          <li>alpha IOU</li>      
+          ...
+        </ul>
+      </td>
+    </tr>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+
+<details open>
+<div align="center">
+  <b>Module Components</b>
+</div>
+<table align="center">
+  <tbody>
+    <tr align="center" valign="bottom">
+      <td>
+        <b>Loss</b>
+      </td>
+      <td>
+        <b>NMS</b>
+      </td>
+      <td>
+        <b>数据增强</b>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+      <ul>
+        <li>ComputeLoss(v3)</li>
+        <li>ComputeLoss(v4)</li>
+        <li>ComputeLoss(v5)</li>
+        <li>ComputeLoss(v6)</li>
+        <li>ComputeLoss(X)</li>
+        <li>ComputeLossAuxOTA(v7)</li>
+        <li>ComputeLossOTA(v7)</li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+        <li>NMS</li>
+        <li>Merge-NMS</li>
+        <li>Soft-NMS</li>
+        <li>CIoU_NMS</li>
+        <li>DIoU_NMS</li>
+        <li>GIoU_NMS</li>
+        <li>EIoU_NMS</li>
+        <li>SIoU_NMS</li>
+        <li>Soft-SIoUNMS</li>
+        <li>Soft-CIoUNMS</li>
+        <li>Soft-DIoUNMS</li>
+        <li>Soft-EIoUNMS</li>
+        <li>Soft-GIoUNMS</li>
+        <li>SimSPPF</li>
+        <li>SimSPPF</li>
+        <li>SimSPPF</li>  
+      </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Mosaic</li>
+          <li>Copy paste</li>
+          <li>Random affine(Rotation, Scale, Translation and Shear)</li>
+          <li>MixUp</li>
+          <li>HSV</li>
+          <li>Random horizontal flip</li> 
+          ...
+        </ul>
+      </td>
+    </tr>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+
+<details open>
+<div align="center">
+  <b>YOLOAir Module Components</b>
+</div>
+<table align="center">
+  <tbody>
+    <tr align="center" valign="bottom">
+      <td>
+        <b>空间金字塔池化结构</b>
+      </td>
+      <td>
+        <b>模块化组件</b>
+      </td>
+      <td>
+        <b>AnchorBased / AnchorFree</b>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+        <ul>
+        <li>SPP</li>
+        <li>SPPF</li>
+        <li>ASPP</li>
+        <li>RFB</li>
+        <li>SPPCSPC</li>
+        <li>SPPFCSPC</li>
+        <li>SimSPPF</li>
+      </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Conv, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, MixConv2d, Focus, CrossConv,BottleneckCSP, C3, C3TR, C3SPP, C3Ghost, C3HB, C3RFEM, MultiSEAM, SEAM, C3STR, SPPCSPC, RepConv, BoT3, Air, CA, CBAM, Involution, Stem, ResCSPC, ResCSPB, ResXCSPB, ResXCSPC, BottleneckCSPB, BottleneckCSPC, ASPP, BasicRFB, SPPCSPC_group, HorBlock, CNeB,C3GC ,C3C2, nn.ConvTranspose2d, DWConvblock, RepVGGBlock, CoT3, ConvNextBlock, SPPCSP, BottleneckCSP2, DownC, BottleneckCSPF, RepVGGBlock, ReOrg, DWT, MobileOne,HorNet...</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>YOLOv5、YOLOv7、YOLOv3、YOLOv4、YOLOR、ScaledYOLOv4、PPYOLO、PPYOLOv2、Improved-YOLOv5、Improved-YOLOv7</li> 
+          <li>YOLOX、YOLOv6 (Paper)、PPYOLOE、PPYOLOE+</li>
+          ...
+        </ul>
+      </td>
+    </tr>
+</td>
+    </tr>
+  </tbody>
+</table>
+</details>
+
+
+<details>
 
 🚀支持更多Backbone
 
@@ -125,7 +386,6 @@ YOLOAir 算法库汇总了多种主流YOLO系列检测模型，一套代码集�
 -  自适应空间特征融合 检测头ASFF Head;
 -  YOLOv6-v2.0 Efficient decoupled head;
 -  YOLOv7检测头IAuxDetect Head, IDetect Head等;
--  PPYOLOE Efficient Task-aligned head with DFL and VFL
 
 -  其他不同检测头
 
@@ -182,8 +442,9 @@ YOLOAir 算法库汇总了多种主流YOLO系列检测模型，一套代码集�
 - YOLOv5 标签分配策略
 - SimOTA 标签分配策略
 - YOLOv7 标签分配策略
-- Adaptive Training Sample Selection 标签分配策略
-- Task Alignment Learning 标签分配策略
+- AutoAssign 标签分配策略🌟
+- Dual Weighting 标签分配策略🌟
+- FreeAnchor 标签分配策略🌟
 - 其他改进的标签分配策略
 持续更新中🎈  
 
@@ -215,6 +476,10 @@ Conv, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, MixConv2d, Focu
 
 🚀支持更多数据增强  
 - Mosaic、Copy paste、Random affine(Rotation, Scale, Translation and Shear)、MixUp、Augment HSV(Hue, Saturation, Value、Random horizontal flip  
+
+</details>
+
+🚀支持加载YOLOv3、YOLOv4、YOLOv5、YOLOv7、YOLOR、Scaled_YOLO等网络的官方预训练权重进行迁移学习
 
 🚀 YOLO系列网络模型热力图可视化(GardCAM、GardCAM++等)
 支持YOLOv3、、YOLOv3-SPP、YOLOv4、YOLOv5、YOLOR、YOLOv7Scaled_YOLOv4、TPH-YOLO、SPD-YOLO以及自定义网络模型等模型 (YOLOAir(Beta版本内测)🔥已支持)
@@ -322,8 +587,7 @@ ______________________________________________________________________
 ### 论文分享 <img title="" src="https://user-images.githubusercontent.com/48054808/157800467-2a9946ad-30d1-49a9-b9db-ba33413d9c90.png" alt="" width="20">
 
 FightingCV公众号每天分享前沿论文动态  
-(公众号回复加群,添加小助手加交流群)   
-<img src='https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b6f5057da9a8410fa22dcc7566548193~tplv-k3u1fbpfcp-watermark.image?' width='140px'>   
+(公众号回复加群,添加小助手加交流群)      
 ______________________________________________________________________
 
 ### Performance
@@ -394,15 +658,92 @@ ______________________________________________________________________
 ______________________________________________________________________
 
 
-### YOLO网络模型具体改进方式教程及原理参考
+## YOLO网络模型具体改进方式教程及原理参考
 
-[https://github.com/iscyy/yoloair/wiki/Improved-tutorial-presentation🌟🌟🌟🌟🌟](https://github.com/iscyy/yoloair/wiki/Improved-tutorial-presentation)
+- [手把手调参最新 YOLOv7 模型 推理部分（一）](https://blog.csdn.net/qq_38668236/article/details/126563528)🌟
 
-更多模块改进说明教程持续更新中...
+- [手把手调参最新 YOLOv7 模型 训练部分（二）](https://blog.csdn.net/qq_38668236/article/details/126566495)🌟
+
+- [论文解读｜清华&Meta提出HorNet，用递归门控卷积进行高阶空间相互作用](https://blog.csdn.net/qq_38668236/article/details/126796291)(推荐)
+
+- [改进YOLOv5系列：30.结合即插即用的动态卷积ODConv](https://blog.csdn.net/qq_38668236/article/details/127097170)(🚀最新推荐)
+
+- [改进YOLOv5系列：首发结合 RepLKNet 构建 最新 RepLKDeXt 结构｜CVPR2022 超大卷积核, 越大越暴力,大到31x31, 涨点高效](https://blog.csdn.net/qq_38668236/article/details/127196758)(🚀最新推荐)
+
+- [改进YOLOv7系列：首发结合最新Centralized Feature Pyramid集中特征金字塔，通过COCO数据集验证强势涨点](https://blog.csdn.net/qq_38668236/article/details/127217449)(🚀最新推荐)
+
+- [改进YOLOv7系列：首发结合最新Transformer视觉模型MOAT结构：交替移动卷积和注意力带来强大的Transformer视觉模型，超强的提升](https://blog.csdn.net/qq_38668236/article/details/127249237)(🚀最新推荐)
+
+- [改进YOLOv5, YOLOv7系列：1.YOLO超全注意力机制汇总 | S2A, SE,SimAM, SKA,ShA, SOCA, CA, CBAM, CrissCrossA, NAM, GAM等](https://blog.csdn.net/qq_38668236/article/details/126086716)🌟(强烈推荐)
+
+- [改进YOLOv5系列：29.YOLOv5 结合 极简又强大的RepVGG 重参数化模型结构](https://blog.csdn.net/qq_38668236/article/details/126735476)🌟
+
+- [改进YOLOv7系列：28.YOLOv7 结合 Swin Transformer V2结构，Swin Transformer V2：通向视觉大模型之路](https://blog.csdn.net/qq_38668236/article/details/126735304)🌟
+
+- [改进YOLOv5系列：27.YOLOv5 结合 Swin Transformer V2结构，Swin Transformer V2：通向视觉大模型之路](https://blog.csdn.net/qq_38668236/article/details/126735107)🌟
+
+- [改进YOLOv7系列：26.CVPR2022. ConvNeXt结合YOLOv7 | 基于ConvNeXt结构 构建 CNeB 模块](https://blog.csdn.net/qq_38668236/article/details/126727055)🌟
+
+- [改进YOLOv7系列：25.YOLOv7 加入RepVGG模型结构，重参数化 极简架构](https://blog.csdn.net/qq_38668236/article/details/126715391)🌟
+
+- [改进YOLOv7系列：24.添加SimAM注意力机制](https://blog.csdn.net/qq_38668236/article/details/126695253)🌟
+
+- [改进YOLOv7系列：23.YOLOv7添加CBAM注意力机制](https://blog.csdn.net/qq_38668236/article/details/126652075)🌟
+
+- [改进YOLOv7系列：22.最新HorNet结合YOLOv7应用](https://blog.csdn.net/qq_38668236/article/details/126626414)🌟
+
+- [改进YOLOv7系列：21.添加ShuffleAttention注意力机制](https://blog.csdn.net/qq_38668236/article/details/126621483)🌟
+
+- [改进YOLO系列：4.YOLOv5_最新MobileOne结构换Backbone修改，超轻量型架构，移动端仅需1ms推理！苹果最新移动端高效主干网络](https://blog.csdn.net/qq_38668236/article/details/126157859)🌟
+
+- [改进YOLO系列：10.最新HorNet结合YOLO应用首发！ | 多种搭配，即插即用 | Backbone主干、递归门控卷积的高效高阶空间交互](https://blog.csdn.net/qq_38668236/article/details/126410711)🌟
+
+- [改进YOLO系列：9.BoTNet Transformer结构的修改](https://blog.csdn.net/qq_38668236/article/details/126333061)🌟
+
+- [改进YOLO系列：8.增加ACmix结构的修改,自注意力和卷积集成](https://blog.csdn.net/qq_38668236/article/details/126302599)🌟
+
+- [改进YOLO系列：7.修改DIoU-NMS,SIoU-NMS,EIoU-NMS,CIoU-NMS,GIoU-NMS](https://blog.csdn.net/qq_38668236/article/details/126243834)🌟
+
+- [改进YOLO系列：6.修改Soft-NMS,Soft-CIoUNMS,Soft-SIoUNMS](https://blog.csdn.net/qq_38668236/article/details/126245080)🌟
+
+- [改进YOLO系列：5.CotNet Transformer结构的修改](https://blog.csdn.net/qq_38668236/article/details/126226726)🌟
+
+- [改进YOLO系列：4.YOLOv5_最新MobileOne结构换Backbone修改](https://blog.csdn.net/qq_38668236/article/details/126157859)🌟
+
+- [改进YOLO系列：3.Swin Transformer结构的修改](https://blog.csdn.net/qq_38668236/article/details/126122888?spm=1001.2014.3001.5502)🌟
+
+- [改进YOLO系列：2.PicoDet结构的修改](https://blog.csdn.net/qq_38668236/article/details/126087343?spm=1001.2014.3001.5502)🌟
+
+- [改进YOLO系列：1.多种注意力机制修改](https://blog.csdn.net/qq_38668236/article/details/126086716)🌟
+
+- [改进YOLO系列：12.添加ShuffleAttention注意力机制](https://blog.csdn.net/qq_38668236/article/details/126498783)🌟
+
+- [改进YOLO系列：13.添加CrissCrossAttention注意力机制](https://blog.csdn.net/qq_38668236/article/details/126503278)🌟
+
+- [改进YOLO系列：14.添加S2-MLPv2注意力机制](https://blog.csdn.net/qq_38668236/article/details/126503447)🌟
+
+- [改进YOLO系列：15.添加SimAM注意力机制](https://blog.csdn.net/qq_38668236/article/details/126503550)🌟
+
+- [改进YOLO系列：16.添加SKAttention注意力机制](https://blog.csdn.net/qq_38668236/article/details/126503616)🌟
+
+- [改进YOLO系列：17.添加NAMAttention注意力机制](https://blog.csdn.net/qq_38668236/article/details/126503665)🌟
+
+- [改进YOLO系列：18.添加SOCA注意力机制](https://blog.csdn.net/qq_38668236/article/details/126503809)🌟
+
+- [改进YOLO系列：18.添加CBAM注意力机制](https://blog.csdn.net/qq_38668236/article/details/126503939)🌟
+
+- [改进YOLO系列：19.添加SEAttention注意力机制](https://blog.csdn.net/qq_38668236/article/details/126504116)🌟
+
+- [改进YOLO系列：20.添加GAMAttention注意力机制](https://blog.csdn.net/qq_38668236/article/details/126504421)🌟
+
+<div align='center'>
+    <img src='https://img-blog.csdnimg.cn/88f8adee63e54ae1906b5bac1699b2bd.jpeg#pic_center'  width="600"  alt='ingishvcn'>
+</div>
 
 ______________________________________________________________________
 
-### YOLOv5官方教程✨
+
+### YOLOv5教程✨
 与YOLOv5框架同步
 
 - [训练自定义数据](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data)  🚀 推荐
@@ -465,6 +806,5 @@ ______________________________________________________________________
 [https://github.com/positive666/yolov5_research/](https://github.com/positive666/yolov5_research)  
 [https://github.com/ppogg/YOLOv5-Lite](https://github.com/ppogg/YOLOv5-Lite)  
 [https://github.com/Gumpest/YOLOv5-Multibackbone](https://github.com/Gumpest/YOLOv5-Multibackbone-Compression)  
-[https://github.com/cv516Buaa/tph-yolov5](https://github.com/cv516Buaa/tph-yolov5)
 
 </details>
